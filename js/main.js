@@ -266,15 +266,16 @@
 
     start() {
       const button = document.getElementById("button");
-      button.addEventListener("click", () => {
-        if (this.isStarted) {
-          if (this.isGameCleared || this.isGameOvered) {
-            location.reload();
-          }
-        } else {
+      document.addEventListener("click", () => {
+        if (!this.isStarted) {
           this.isStarted = true;
           button.textContent = "RESET";
           button.classList.add("activ");
+        }
+      });
+      button.addEventListener("click", () => {
+        if (this.isGameCleared || this.isGameOvered) {
+          location.reload();
         }
       });
     }
