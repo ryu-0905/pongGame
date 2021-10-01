@@ -6,8 +6,8 @@
       this.ctx = this.canvas.getContext("2d");
       this.blockWidth = 70;
       this.blockHeight = 50;
-      this.row_num = 999; //priority_blockHeight
-      this.col_num = 999; //priority_blockWidth
+      this.row_num = 4; //priority_blockHeight
+      this.col_num = 4; //priority_blockWidth
       this.blocks = [];
       this.setBlock();
       this.AllCleared = false;
@@ -48,9 +48,9 @@
       if (this.canvas.width <= this.blockWidth * this.row_num) {
         this.row_num = Math.floor(this.canvas.width / this.blockWidth);
       }
-      if (this.canvas.height - 200 < this.blockHeight * this.col_num) {
+      if (this.canvas.height - 300 < this.blockHeight * this.col_num) {
         this.col_num = Math.floor(
-          (this.canvas.height - 200) / this.blockHeight
+          (this.canvas.height - 300) / this.blockHeight
         );
       }
       const block_num = this.row_num * this.col_num;
@@ -63,7 +63,7 @@
             (this.canvas.width - this.blockWidth * this.row_num) / 2,
           y:
             this.blockHeight * col +
-            (this.canvas.height - 200 - this.blockHeight * this.col_num) / 2 +
+            (this.canvas.height - 300 - this.blockHeight * this.col_num) / 2 +
             50,
           w: this.blockWidth,
           h: this.blockHeight,
